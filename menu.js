@@ -156,17 +156,23 @@ const foodArr = [
 */
 
 //CODE HERE
-let filterArrayByTag = foodArr.filter((element) => {
-    for(let i = 0 ; i< element.tags.length ;i++){
-        if(element.tags[i] === 'ranch'){
-            return element;
-        }
-    }
+//let filterArrayByTag = foodArr.filter((element) => {
+  //  for(let i = 0 ; i< element.tags.length ;i++){
+    //    if(element.tags[i] === 'ranch'){
+      //      return element;
+        //}
+    //}
     
-});
+//});
 
-console.log(filterArrayByTag);
+//console.log(filterArrayByTag);
 
+const filteredfood = foodArr.filter(food => {
+    if(food.tags.includes('kids')){
+        return food
+    }
+})
+console.log(filteredfood);
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -208,21 +214,22 @@ console.log(filterArrayByTag);
 
 //CODE HERE
 
-function filterByProperty(property,number,type){
-
-    let filtertype = '===';
+const filterByProperty = (property,number,type) => {
+const filtered = foodArr.filter(food => {
     if(type === 'above'){
-        filtertype = '>';
+        return food[property] >= number
     }
     else {
-        filtertype = '<';
-    }
+        return food[property] <= number
+    }}
+)
+return filtered
+}
+    //var filteredArray = foodArr.filter(
+      //  eachObj => eachObj.property + filtertype + number);
     
-    var filteredArray = foodArr.filter(
-        eachObj => eachObj.property + filtertype + number);
-    
-    return filteredArray;
-} 
+   // return filteredArray;
+//} 
 
 /*
     Invoke the `filterByProperty` function passing

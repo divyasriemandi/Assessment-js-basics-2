@@ -26,8 +26,8 @@ class employee {
       this.shifts = shifts
     }
 
-    getSchedule(names,shifts){
-        console.log(names + ' works on ' + shifts);
+    getSchedule(){
+        console.log(`${THIS.names}  works on ${this.shifts}`);
     }
   }
   
@@ -109,7 +109,7 @@ class Manager extends employee {
     
      }
      getEmployees(names, newEmployees){
-        console.log(names + ' manages ' + newEmployees);
+        console.log(`${this.name} manages ${JSON.stringify(this.employees)}`)
     }
 
     addEmployee(emp){

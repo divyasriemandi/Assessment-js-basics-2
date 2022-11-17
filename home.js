@@ -145,16 +145,7 @@ const deals = [
 */
 
 //CODE HERE
-const newdeal =
-    {
-        title: '10% Off!', 
-        desc: 'Applied to your entire order when you spend $30 or more'
-    }
-;
-
-deals.splice(0,1,newdeal);
-//deals.replace()
-console.log(deals);
+deals[0].title = deals[0].title.replace('15','10')
 /*
     The restaurant is going to continue its
     family deal for another month. 
